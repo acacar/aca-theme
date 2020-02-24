@@ -1,35 +1,10 @@
-;;; leuven-theme.el --- Awesome Emacs color theme on white background
-
-;; Copyright (C) 2003-2020 Free Software Foundation, Inc.
-
-;; Author: Fabrice Niessen <(concat "fniessen" at-sign "pirilampo.org")>
-;; URL: https://github.com/fniessen/emacs-leuven-theme
-;; Version: 20200102.2050
-;; Keywords: color theme
-
-;; This file is part of GNU Emacs.
-
-;; GNU Emacs is free software: you can redistribute it and/or modify
-;; it under the terms of the GNU General Public License as published by
-;; the Free Software Foundation, either version 3 of the License, or
-;; (at your option) any later version.
-
-;; GNU Emacs is distributed in the hope that it will be useful,
-;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-;; GNU General Public License for more details.
-
-;; You should have received a copy of the GNU General Public License
-;; along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
+;;; aca-theme.el --- My version of the leuven theme
 
 ;;; Commentary:
 
-;; This elegant Org-enhancing color theme "leuven" ROCKS!
-;; ... and not just for Org mode.
-;;
 ;; To use it, put the following in your Emacs configuration file:
 ;;
-;;   (load-theme 'leuven t)
+;;   (load-theme 'aca-theme t)
 ;;
 ;; Requirements: Emacs 24+.
 ;;
@@ -40,30 +15,30 @@
 
 ;;; Options.
 
-(defgroup leuven nil
-  "Leuven theme options.
+(defgroup aca nil
+  "Aca theme options.
 The theme has to be reloaded after changing anything in this group."
   :group 'faces)
 
-(defcustom leuven-scale-outline-headlines t
+(defcustom aca-scale-outline-headlines t
   "Scale `outline' (and `org') level-1 headlines.
 This can be nil for unscaled, t for using the theme default, or a scaling number."
   :type '(choice
           (const :tag "Unscaled" nil)
           (const :tag "Default provided by theme" t)
           (number :tag "Set scaling"))
-  :group 'leuven)
+  :group 'aca)
 
-(defcustom leuven-scale-org-agenda-structure t
+(defcustom aca-scale-org-agenda-structure t
   "Scale Org agenda structure lines, like dates.
 This can be nil for unscaled, t for using the theme default, or a scaling number."
   :type '(choice
           (const :tag "Unscaled" nil)
           (const :tag "Default provided by theme" t)
           (number :tag "Set scaling"))
-  :group 'leuven)
+  :group 'aca)
 
-(defun leuven-scale-font (control default-height)
+(defun aca-scale-font (control default-height)
   "Function for splicing optional font heights into face descriptions.
 CONTROL can be a number, nil, or t.  When t, use DEFAULT-HEIGHT."
   (cond
@@ -73,7 +48,7 @@ CONTROL can be a number, nil, or t.  When t, use DEFAULT-HEIGHT."
 
 ;;; Theme Faces.
 
-(deftheme leuven
+(deftheme aca
   "Face colors with a light background.
 Basic, Font Lock, Isearch, Gnus, Message, Org mode, Diff, Ediff,
 Flyspell, Semantic, and Ansi-Color faces are included -- and much
@@ -81,7 +56,7 @@ more...")
 
 (let ((class '((class color) (min-colors 89)))
 
-      ;; Leuven generic colors.
+      ;; Aca generic colors.
       (cancel '(:slant italic :strike-through t :foreground "#A9A9A9"))
       (clock-line '(:box (:line-width 1 :color "#335EA8") :foreground "black" :background "#EEC900"))
       (code-block '(:foreground "#000088" :background "#FFFFE0" :extend t))
@@ -121,7 +96,7 @@ more...")
       (mail-unread-high '(:weight bold :foreground "#135985"))
       (marked-line '(:foreground "#AA0000" :background "#FFAAAA"))
       (match '(:weight bold :background "#FFFF00")) ; occur patterns + match in helm for files + match in Org files.
-      (ol1 `(,@(leuven-scale-font leuven-scale-outline-headlines 1.3) :weight bold :overline "#A7A7A7" :foreground "#3C3C3C" :background "#F0F0F0" :extend t))
+      (ol1 `(,@(aca-scale-font aca-scale-outline-headlines 1.3) :weight bold :overline "#A7A7A7" :foreground "#3C3C3C" :background "#F0F0F0" :extend t))
       (ol2 '(:height 1.0 :weight bold :overline "#123555" :foreground "#123555" :background "#E5F4FB" :extend t))
       (ol3 '(:height 1.0 :weight bold :foreground "#005522" :background "#EFFFEF" :extend t))
       (ol4 '(:height 1.0 :weight bold :slant normal :foreground "#EA6300" :extend t))
@@ -147,7 +122,7 @@ more...")
   )
 
   (custom-theme-set-faces
-   'leuven
+   'aca
    `(default ((,class (:foreground "#333333" :background "#FFFFFF"))))
    `(bold ((,class (:weight bold :foreground "black"))))
    `(bold-italic ((,class (:weight bold :slant italic :foreground "black"))))
@@ -642,14 +617,14 @@ more...")
    `(js2-warning ((,class (:underline "orange"))))
 
    ;; Org non-standard faces.
-   `(leuven-org-deadline-overdue ((,class (:foreground "#F22659"))))
-   `(leuven-org-deadline-today ((,class (:weight bold :foreground "#4F4A3D" :background "#FFFFCC"))))
-   `(leuven-org-deadline-tomorrow ((,class (:foreground "#40A80B"))))
-   `(leuven-org-deadline-future ((,class (:foreground "#40A80B"))))
-   `(leuven-gnus-unseen ((,class (:weight bold :foreground "#FC7202"))))
-   `(leuven-gnus-date ((,class (:foreground "#FF80BF"))))
-   `(leuven-gnus-size ((,class (:foreground "#8FBF60"))))
-   `(leuven-todo-items-face ((,class (:weight bold :foreground "#FF3125" :background "#FFFF88"))))
+   `(aca-org-deadline-overdue ((,class (:foreground "#F22659"))))
+   `(aca-org-deadline-today ((,class (:weight bold :foreground "#4F4A3D" :background "#FFFFCC"))))
+   `(aca-org-deadline-tomorrow ((,class (:foreground "#40A80B"))))
+   `(aca-org-deadline-future ((,class (:foreground "#40A80B"))))
+   `(aca-gnus-unseen ((,class (:weight bold :foreground "#FC7202"))))
+   `(aca-gnus-date ((,class (:foreground "#FF80BF"))))
+   `(aca-gnus-size ((,class (:foreground "#8FBF60"))))
+   `(aca-todo-items-face ((,class (:weight bold :foreground "#FF3125" :background "#FFFF88"))))
 
    `(light-symbol-face ((,class (:background "#FFFFA0"))))
    `(linum ((,class (:foreground "#9A9A9A" :background "#EDEDED"))))
@@ -731,9 +706,9 @@ more...")
    `(org-agenda-clocking ((,class (:foreground "black" :background "#EEC900"))))
    `(org-agenda-column-dateline ((,class ,column)))
    `(org-agenda-current-time ((,class (:underline t :foreground "#1662AF"))))
-   `(org-agenda-date ((,class (,@(leuven-scale-font leuven-scale-org-agenda-structure 1.6) :weight bold :foreground "#1662AF"))))
-   `(org-agenda-date-today ((,class (,@(leuven-scale-font leuven-scale-org-agenda-structure 1.6) :weight bold :foreground "#4F4A3D" :background "#FFFFCC"))))
-   `(org-agenda-date-weekend ((,class (,@(leuven-scale-font leuven-scale-org-agenda-structure 1.6) :weight bold :foreground "#4E4E4E"))))
+   `(org-agenda-date ((,class (,@(aca-scale-font aca-scale-org-agenda-structure 1.6) :weight bold :foreground "#1662AF"))))
+   `(org-agenda-date-today ((,class (,@(aca-scale-font aca-scale-org-agenda-structure 1.6) :weight bold :foreground "#4F4A3D" :background "#FFFFCC"))))
+   `(org-agenda-date-weekend ((,class (,@(aca-scale-font aca-scale-org-agenda-structure 1.6) :weight bold :foreground "#4E4E4E"))))
    `(org-agenda-diary ((,class (:weight bold :foreground "green4" :background "light blue"))))
    `(org-agenda-dimmed-todo-face ((,class (:foreground "gold2"))))
    `(org-agenda-done ((,class (:foreground "#555555"))))
@@ -742,7 +717,7 @@ more...")
    `(org-agenda-filter-regexp ((,class (:weight bold :foreground "orange"))))
    `(org-agenda-filter-tags ((,class (:weight bold :foreground "orange"))))
    `(org-agenda-restriction-lock ((,class (:background "#E77D63"))))
-   `(org-agenda-structure ((,class (,@(leuven-scale-font leuven-scale-org-agenda-structure 1.6) :weight bold :foreground "#1F8DD6"))))
+   `(org-agenda-structure ((,class (,@(aca-scale-font aca-scale-org-agenda-structure 1.6) :weight bold :foreground "#1F8DD6"))))
    `(org-archived ((,class (:foreground "gray70"))))
    `(org-beamer-tag ((,class (:box (:line-width 1 :color "#FABC18") :foreground "#2C2C2C" :background "#FFF8D0"))))
    `(org-block ((,class ,code-block)))
@@ -1028,7 +1003,7 @@ more...")
 
    ))
 
-(custom-theme-set-variables 'leuven
+(custom-theme-set-variables 'aca
 
   ;; highlight-sexp-mode.
   '(hl-sexp-background-color "#efebe9")
@@ -1041,20 +1016,8 @@ more...")
     ["black" "red3" "ForestGreen" "yellow3" "blue" "magenta3" "DeepSkyBlue" "gray50"])
  )
 
-;;;###autoload
-(when (and (boundp 'custom-theme-load-path)
-           load-file-name)
-  ;; Add theme folder to `custom-theme-load-path' when installing over MELPA.
-  (add-to-list 'custom-theme-load-path
-               (file-name-as-directory (file-name-directory load-file-name))))
 
-;;;###autoload
-(when (string-match "/etc/themes/$"
-                    (file-name-directory (or load-file-name (buffer-file-name))))
-  (message "To stay up-to-date, you should better install and use leuven-theme from MELPA.")
-  (sit-for 2))
-
-(provide-theme 'leuven)
+(provide-theme 'aca)
 
 ;; This is for the sake of Emacs.
 ;; Local Variables:
@@ -1064,4 +1027,4 @@ more...")
 ;; time-stamp-start: "Version: "
 ;; End:
 
-;;; leuven-theme.el ends here
+;;; aca-theme.el ends here
