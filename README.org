@@ -6,7 +6,7 @@
 
 * My Color theme
 
-   Is basically the [[https://github.com/fniessen/emacs-leuven-theme][Leuven]], forked and lightly modified for convenience and taste. There is no need to be using this if you are not me, just go to the [[https://github.com/fniessen/emacs-leuven-theme][original]] and if you like it consider donating to the original author.
+   Is basically the Leuven theme by Fabrice Niessen, lightly modified for my taste and forked for convenience. There is no need to be using this if you are not me, just go to the [[https://github.com/fniessen/emacs-leuven-theme][original]] and if you like it, consider donating to the original author.
 
 
 
