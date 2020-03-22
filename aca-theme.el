@@ -20,7 +20,7 @@
 The theme has to be reloaded after changing anything in this group."
   :group 'faces)
 
-(defcustom aca-scale-outline-headlines t
+(defcustom aca-scale-outline-headlines nil
   "Scale `outline' (and `org') level-1 headlines.
 This can be nil for unscaled, t for using the theme default, or a scaling number."
   :type '(choice
@@ -29,7 +29,7 @@ This can be nil for unscaled, t for using the theme default, or a scaling number
           (number :tag "Set scaling"))
   :group 'aca)
 
-(defcustom aca-scale-org-agenda-structure t
+(defcustom aca-scale-org-agenda-structure nil
   "Scale Org agenda structure lines, like dates.
 This can be nil for unscaled, t for using the theme default, or a scaling number."
   :type '(choice
@@ -123,7 +123,7 @@ more...")
 
   (custom-theme-set-faces
    'aca
-   `(default ((,class (:foreground "#333333" :background "#F7F7F7"))))
+   `(default ((,class (:foreground "#000000" :background "#F7F7F7"))))
    `(bold ((,class (:weight bold :foreground "black"))))
    `(bold-italic ((,class (:weight bold :slant italic :foreground "black"))))
    `(italic ((,class (:slant italic :foreground "#1A1A1A"))))
@@ -150,7 +150,7 @@ more...")
    `(whitespace-trailing ((,class ,trailing)))
 
    ;; Mode line faces.
-   `(mode-line ((,class (:box (:line-width 1 :color "#1A2F54") :foreground "black" :background "light yellow"))))
+   `(mode-line ((,class (:box (:line-width 1 :color "#1A2F54") :height 0.8  :foreground "black" :background "light yellow"))))
    `(mode-line-inactive ((,class (:box (:line-width 1 :color "#4E4E4C") :foreground "#F0F0EF" :background "#9B9C97"))))
    `(mode-line-buffer-id ((,class (:weight bold :foreground "dark blue"))))
    `(mode-line-emphasis ((,class (:weight bold :foreground "purple"))))
@@ -576,7 +576,7 @@ more...")
    `(highlight-changes ((,class (:foreground nil)))) ;; blue "#2E08B5"
    `(highlight-changes-delete ((,class (:strike-through nil :foreground nil)))) ;; red "#B5082E"
    `(highlight-symbol-face ((,class (:background "#FFFFA0"))))
-   `(hl-line ((,class ,highlight-yellow))) ; Highlight current line.
+   `(hl-line ((,class (:background "light yellow")))) ; Highlight current line.
    `(hl-tags-face ((,class ,highlight-current-tag))) ; ~ Pair highlighting (matching tags).
    `(holiday-face ((,class (:foreground "#777777" :background "#E4EBFE"))))
    `(html-helper-bold-face ((,class (:weight bold :foreground "black"))))
