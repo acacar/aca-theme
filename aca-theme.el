@@ -150,7 +150,7 @@ more...")
    `(whitespace-trailing ((,class ,trailing)))
 
    ;; Mode line faces.
-   `(mode-line ((,class (:box (:line-width 1 :color "#1A2F54") :height 0.8  :foreground "black" :background "light yellow"))))
+   `(mode-line ((,class (:box (:line-width 1 :color "#1A2F54") :foreground "black" :background "light yellow"))))
    `(mode-line-inactive ((,class (:box (:line-width 1 :color "#4E4E4C") :foreground "#F0F0EF" :background "#9B9C97"))))
    `(mode-line-buffer-id ((,class (:weight bold :foreground "dark blue"))))
    `(mode-line-emphasis ((,class (:weight bold :foreground "purple"))))
